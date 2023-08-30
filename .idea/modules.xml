@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Dropbox/work/github_private/03_templates_front_end/.idea/0_templates_front_end (thiago-pc's conflicted copy 2023-01-03).iml" filepath="$PROJECT_DIR$/../../Dropbox/work/github_private/03_templates_front_end/.idea/0_templates_front_end (thiago-pc's conflicted copy 2023-01-03).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Dropbox/work/github_private/08_prototypes_js/.idea/3b_prototypes_js.iml" filepath="$PROJECT_DIR$/../../Dropbox/work/github_private/08_prototypes_js/.idea/3b_prototypes_js.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/react_google_login.iml" filepath="$PROJECT_DIR$/.idea/react_google_login.iml" />
     </modules>
   </component>
