@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import '../../style.css'
 
 function HomePage() {
   const [quote, setQuote] = useState('');
@@ -12,7 +13,7 @@ function HomePage() {
 
   const fetchRandomQuote = async () => {
     // Assuming you have an endpoint in your Flask backend to get a random quote
-    const response = await fetch('http://localhost:8000/get_random_quote');
+    const response = await fetch('http://localhost:5000/get_random_quote');
     const data = await response.json();
     setQuote(data.quote);
     setAuthor(data.author);
@@ -20,7 +21,7 @@ function HomePage() {
 
   const saveQuote = async () => {
     try {
-      const response = await fetch('http://localhost:8000/save_quote', {
+      const response = await fetch('http://localhost:5000/save_quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -50,7 +51,7 @@ function HomePage() {
 
   return (
     <div className={`div-body-encapsulate ${isDarkMode ? 'dark-mode' : ''}`}>
-      <img alt="Logo" src="/static/logo.png" className="logo_in_header"/>
+      <img alt="Logo" src="../../assets/logo.png" className="logo_in_header"/>
       <h3>Inspirational Quotes</h3>
 
       <div className="quote-block home-quote-block">

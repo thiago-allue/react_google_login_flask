@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /local
+/0_local
 /.pnp
 .pnp.js
 

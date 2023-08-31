@@ -1,0 +1,61 @@
+id_note,email,author,author_is_user,quote,
+1,all, William Shakespeare,False,"To be, or not to be: that is the question.",
+2,all, Oscar Wilde,False,Be yourself; everyone else is already taken.,
+3,all, Albert Einstein,False,Life is like riding a bicycle. To keep your balance you must keep moving.,
+4,all, Isaac Newton,False,If I have seen further it is by standing on the shoulders of Giants.,
+5,all, Mahatma Gandhi,False,You must be the change you wish to see in the world.,
+6,all, Nelson Mandela,False,It always seems impossible until it's done.,
+7,all, Martin Luther King Jr.,False,I have a dream that one day this nation will rise up and live out the true meaning of its creed.,
+8,all, Winston Churchill,False,"Success is not final, failure is not fatal: It is the courage to continue that counts.",
+9,all, Mark Twain,False,The two most important days in your life are the day you are born and the day you find out why.,
+10,all, Maya Angelou,False,"I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+11,all, Steve Jobs,False,"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.",
+12,all, Thomas Edison,False,"I have not failed. I've just found 10,000 ways that won't work.",
+13,all, Eleanor Roosevelt,False,The future belongs to those who believe in the beauty of their dreams.,
+14,all, Abraham Lincoln,False,"Whatever you are, be a good one.",
+15,all, Helen Keller,False,The only thing worse than being blind is having sight but no vision.,
+16,all, Confucius,False,It does not matter how slowly you go as long as you do not stop.,
+17,all, Ralph Waldo Emerson,False,To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.,
+18,all, Aristotle,False,It is the mark of an educated mind to be able to entertain a thought without accepting it.,
+19,all, Andy Warhol,False,"They always say time changes things, but you actually have to change them yourself.",
+20,all, Mother Teresa,False,"If you judge people, you have no time to love them.",
+2,user2@email.com,user2@email.com,True,When you change your thoughts - remember to also change your world.,
+3,user2@email.com,user2@email.com,True,It is only when we take chances - when our lives improve. The initial and the most difficult risk that we need to take is to become honest.,
+4,user2@email.com,user2@email.com,True,Nature has given us all the pieces required to achieve exceptional wellness and health - but has left it to us to put these pieces together.,
+5,user2@email.com,user2@email.com,True,Success is not final, failure is not fatal: It is the courage to continue that counts.
+6,user3@email.com,user3@email.com,True,It is better to fail in originality than to succeed in imitation.,
+7,user3@email.com,user3@email.com,True,The road to success and the road to failure are almost exactly the same.,
+8,user3@email.com,user3@email.com,True,Success usually comes to those who are too busy looking for it.,
+9,user3@email.com,user3@email.com,True,Develop success from failures. Discouragement and failure are two of the surest stepping stones to success.,
+31,aula.mackenzie.tf@gmail.com,aula.mackenzie.tf@gmail.com,True,A journey of a thousand miles begins with a single step.,
+32,aula.mackenzie.tf@gmail.com,aula.mackenzie.tf@gmail.com,True,"Fear not the unknown, but face it with courage and confidence.",
+33,aula.mackenzie.tf@gmail.com,aula.mackenzie.tf@gmail.com,True,"Life is a journey, not a destination.",
+34,aula.mackenzie.tf@gmail.com,aula.mackenzie.tf@gmail.com,True,Live life with love and curiosity.,
+35,aula.mackenzie.tf@gmail.com,aula.mackenzie.tf@gmail.com,True,Dream big and never give up.,
+36,aula.mackenzie.tf@gmail.com,aula.mackenzie.tf@gmail.com,True,"Love is the most powerful force in the universe, and the greatest gifts come from within.",
+51,user1@email.com,Open AI,True,"Dream, believe, and never give up. OK?"
+52,user1@email.com,Open AI,True,Live in the moment and savor every blessing.
+53,user1@email.com,Open AI,True,"Dreams are the seeds of change, so don't let life's hardships discourage you from sowing them."
+54,user1@email.com,Open AI,True,Choose joy over fear.
+55,user1@email.com,Abraham Lincoln,True,"Whatever you are, be a good one."
+56,user1@email.com,Open AI,True,"Quotes by
+OpenAI Generative AI
+        "
+57,user1@email.com,Open AI,True,"Quotes by
+OpenAI Generative AI
+        "
+58,user1@email.com,Open AI,True,"Quotes by
+OpenAI Generative AI
+        "
+59,user1@email.com,Isaac Newton,True,If I have seen further it is by standing on the shoulders of Giants.
+60,aula.mackenzie.tf@gmail.com,William Shakespeare,True,"To be, or not to be: that is the question."
+61,aula.mackenzie.tf@gmail.com,aula.mackenzie.tf@gmail.com,True,vaiii
+62,aula.mackenzie.tf@gmail.com,Open AI,True,Live life with no regrets and no excuses.
+63,aula.mackenzie.tf@gmail.com,Nelson Mandela,True,It always seems impossible until it's done.
+64,aula.mackenzie.tf@gmail.com,Open AI,True,Trust yourself and follow your heart.
+65,aula.mackenzie.tf@gmail.com,William Shakespeare,True,"To be, or not to be: that is the question."
+66,aula.mackenzie.tf@gmail.com,Albert Einstein,True,Life is like riding a bicycle. To keep your balance you must keep moving.
+67,aula.mackenzie.tf@gmail.com,Aristotle,True,It is the mark of an educated mind to be able to entertain a thought without accepting it.
+68,user1@email.com,Steve Jobs,True,"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work."
+69,user1@email.com,William Shakespeare,True,"To be, or not to be: that is the question."
+70,user1@email.com,Open AI,True,"Dream, believe, achieve."

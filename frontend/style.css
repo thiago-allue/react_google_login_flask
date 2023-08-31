@@ -1,0 +1,409 @@
+:root {
+    --bg-color: #fff;
+    --header-color: #d5d51b;
+    --text-color: #000;
+    --link-color: blue;
+    --border-color: black;
+    --font-weight: bold;
+    --font-style: italic;
+}
+
+body.dark-mode {
+    --bg-color: #333;
+    --header-color: #333;
+    --text-color: #f5f5f5;
+    --link-color: #ff9800;
+    --font-weight: bold;
+    --border-color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+img {
+    max-height: 40%;
+    max-width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+#h1_for_menu {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+#div_header, #div_header_menu {
+    background-color: var(--header-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    height: 75px;
+}
+
+#textarea_openid {
+    height: 80px;
+    width: 300px;
+}
+
+.span_example_javascripts {
+    font-size: 12px;
+    font-style: italic;
+    margin-left: -20px;
+}
+
+#div_header_menu {
+    background-color: var(--header-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    height: 35px;
+    position: relative;
+    margin-top: 10px;
+}
+
+#menu_entry_home {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.menu_entry {
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.a_navigation, .a_logout {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.a_logout {
+    font-style: italic;
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 12px;
+}
+
+.p_genai_quotes {
+    font-weight: bold;
+    text-align: left;
+}
+
+.span_user {
+    font-size: 12px;
+}
+
+.span_logout {
+    margin: 10px 0 !important;
+    background-color: blue !important;
+    font-weight: bold !important;
+}
+
+.p_quote {
+    font-style: italic;
+}
+
+.logo_in_header {
+    border-color: #333;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10%;
+    margin-top: 30px;
+}
+
+.logo_in_header_pages {
+    border-color: #333;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -180px;
+}
+
+#button_homepage {
+    font-size: 12px !important;
+}
+
+#div_index {
+    width: 450px;
+    border-color: black;
+}
+
+#l_login_google {
+    border: 1px solid;
+}
+
+#gen_ai_link {
+    margin-right: 30px;
+}
+
+#home_link {
+    margin-right: 12px;
+}
+
+#my_quotes_link {
+    margin-left: -10px;
+}
+
+#boldarator {
+    font-weight: bold !important;
+    color: cadetblue;
+}
+
+.span_footer {
+    color: green;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.logo_create {
+    height: 40%;
+    width: 40%;
+}
+
+.logo_gen_ai {
+    height: 25%;
+    width: 25%;
+}
+
+.logo_notes {
+    height: 25%;
+    width: 25%;
+    align-self: center;
+}
+
+.header {
+    position: absolute;
+    top: 85px;
+    right: -5px;
+}
+
+#logout_button {
+    font-style: normal;
+    font-size: 12px;
+    width: 200px;
+    padding: 0;
+    margin-right: 20px;
+}
+
+.a_navigation {
+    display: inline;
+}
+
+.div-body-encapsulate {
+    position: relative;
+    border: 1px solid var(--border-color);
+    width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.div-content-login {
+    display: inline-block;
+    border: 1px solid #333333;
+    width: 350px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#button_login_google {
+    font-style: normal;
+    text-decoration: none !important;
+    margin-left: 12px;
+    color: var(--text-color);
+}
+
+/* Clear float after the image and div */
+#button_login_google:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#button_login_google:hover {
+    background: rgba(246, 246, 246, 0.42);
+}
+
+#google-logo {
+    margin-left: 25px;
+    height: 20px;
+    width: 20px;
+    margin-bottom: -35px;
+    display: flex;
+    align-items: center;
+}
+
+.logout-message {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.logout-message h1 {
+    font-size: 24px;
+}
+
+.logout-message p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.logout-message a {
+    font-size: 18px;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.default_input_box {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-style: italic;
+    color: #999;
+    margin: 5px 0;
+}
+
+#label_login_google {
+    font-style: normal;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.a_href_logout {
+    font-size: 14px !important;
+    padding: 0;
+}
+
+#logout_button {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+#logout_button:hover {
+    background-color: #ccc;
+}
+
+.default_input_box::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.default_input_box:focus {
+    font-style: normal;
+    color: #000;
+}
+
+.quote-block {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color: rgba(86, 187, 102, 0.42);
+}
+
+.home-quote-block {
+    background-color: rgba(86, 187, 102, 0.42);
+    border: none;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 70px !important;
+}
+
+.quote-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--header-color);
+}
+
+.quote-content {
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.quote-author {
+    text-align: right;
+    font-size: 0.9em;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.quote-author-homepage {
+    margin-right: 10px;
+}
+
+#quoteInputHandcrafting {
+    width: 300px;
+    height: 120px;
+    resize: none;
+}
+
+.quoteDiv {
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quoteText {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.editButton, .deleteButton {
+    margin-left: 10px;
+}
+
+.textarea-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-dark-mode-container {
+    text-align: center;
+}
+
+#quoteInputGenAI_id {
+    border-radius: 5px;
+    color: #4f4f4f;
+    display: inline-block;
+    padding: 50px;
+    overflow: hidden;
+    resize: none;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    user-select: none;
+}
+
+#complete_content {
+    text-align: center;
+}
+
+#saveGenAIButton_id {
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#label_creativity {
+    margin-bottom: -10px;
+}
