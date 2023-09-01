@@ -20,8 +20,8 @@
 .env.test.local
 .env.production.local
 
-# /backend/.env
-# /frontend/.env
+/backend/.env
+/frontend/.env
 
 /frontend/node_modules
 
