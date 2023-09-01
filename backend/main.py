@@ -99,6 +99,7 @@ def get_logged_in_email():
 
 @app.route('/generate_quote', methods=['GET'])
 def generate_quote():
+    """Generate a quote using the OpenAI model."""
     llm = OpenAI()
     our_query = """
     You are a Guru of Inspirational Quotes for life, that touch the heart of people. 
@@ -117,6 +118,7 @@ def generate_quote():
 
 @app.route('/save_quote', methods=['POST'])
 def save_quote():
+    """Save a quote to the database."""
     if 'email' in session:
         data = request.json
         quote = data.get('quote')
@@ -134,6 +136,7 @@ def save_quote():
 
 @app.route('/save_quote_homepage', methods=['POST'])
 def save_quote_homepage():
+    """Save a quote from the homepage."""
     data = request.json
     quote = data.get('quote')
     author = data.get('author')
@@ -143,6 +146,7 @@ def save_quote_homepage():
 
 @app.route('/get_email_quotes')
 def get_email_quotes():
+    """Retrieve quotes associated with the logged-in email."""
     email = session.get('email')
     if not email:
         return jsonify(success=False, message="User not page_homepage in"), 403
@@ -152,6 +156,7 @@ def get_email_quotes():
 
 @app.route('/edit_quote', methods=['POST'])
 def edit_quote():
+    """Edit an existing quote."""
     old_quote = request.json.get('old_quote')
     new_quote = request.json.get('new_quote')
     email_of_user = session.get('email')  # Get the email of the page_homepage-in user
@@ -182,6 +187,7 @@ def edit_quote():
 
 @app.route('/delete_quote', methods=['POST'])
 def delete_quote():
+    """Delete a specific quote."""
     quote_to_delete = request.json.get('quote')
     email_of_user = session.get('email')  # Get the email of the page_homepage-in user
 
@@ -211,12 +217,14 @@ def delete_quote():
 
 @app.route('/get_all_quotes')
 def get_all_quotes():
+    """Retrieve all quotes from the database."""
     quotes = load_all_quotes()
     return jsonify(quotes=quotes)
 
 
 @app.route('/get_random_quote', methods=['GET'])
 def get_random_quote():
+    """Retrieve a random quote."""
     try:
         quotes = []
         with open('../db/table_id_quote_author.csv', 'r') as csvfile:
