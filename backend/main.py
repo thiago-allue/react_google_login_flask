@@ -1,6 +1,7 @@
 import csv
 import os
 import random
+import secrets
 
 from dotenv import load_dotenv
 from flask import render_template, redirect, url_for, Flask, request, jsonify, session
@@ -13,6 +14,18 @@ from db_interface import load_user_data, load_quotes_for_email, save_quote_to_cs
 # Load environment variables from the .env file
 load_dotenv()
 
+
+"""
+Self Note: Token JWT is different then Key JWT. 
+This Key is generated one time in the begging of the server
+"""
+
+
+# Generation of a secret key for JWT
+key = secrets.token_hex(32)
+os.environ['JWT_SECRET_KEY'] = key
+print("Generated JWT_SECRET_KEY: ", key)
+
 from google_oauth import oauth_bp
 
 FILEPATH_DB_TABLE_ID_QUOTE_AUTHOR = os.environ['FILEPATH_DB_TABLE_ID_QUOTE_AUTHOR']
@@ -20,7 +33,8 @@ GOOGLE_CLIENT_ID = os.environ['GOOGLE_CLIENT_ID']
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
-CORS(app)
+CORS(app, supports_credentials=True)
+# CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 oauth = OAuth(app)
 google = oauth.remote_app(
     'google',
@@ -39,19 +53,22 @@ google = oauth.remote_app(
 
 @app.route('/')
 def index():
-    return render_template('login_screen.html')
+    return jsonify({'message': 'Hello, from the Backend!'})
 
 
 @app.route('/login', methods=['POST'])
 def login():
     users = load_user_data()
-    email = request.form.get('email')
-    password = request.form.get('password')
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
+    print("users, email, password", users, email, password)
+
     if email in users and users[email] == password:
         session['email'] = email
-        return redirect(url_for('page_homepage'))
+        return jsonify(success=True, message="Login successful")
     else:
-        return redirect(url_for('page_forbidden'))
+        return jsonify(success=False, message="Unauthorized"), 401
 
 
 @app.route('/logout')
@@ -65,11 +82,23 @@ def logout_screen():
     return render_template('logout_screen.html')
 
 
+@app.route('/get_logged_in_email', methods=['GET'])
+def get_logged_in_email():
+    """Endpoint to retrieve the logged-in user's email."""
+    email = session.get('email')
+    if email:
+        return jsonify(email=email)
+    else:
+        return jsonify({"error": "User not logged in"}), 403
+
+
 @app.route('/page_homepage')
 def page_homepage():
     if 'email' in session:
-        return render_template('page_home.html', email=session['email'],
-                               active_menu='page_homepage')
+        return "Hi from homepage"
+            # redirect(url_for('page_homepage'))
+            # render_template('page_home.html', email=session['email'],
+            #                    active_menu='page_homepage')
     else:
         return redirect(url_for('page_forbidden'))
 
@@ -249,5 +278,6 @@ def get_random_quote():
 # Register the blueprints
 app.register_blueprint(oauth_bp, url_prefix='/oauth')
 
+
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=5000)

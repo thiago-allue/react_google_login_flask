@@ -1,14 +1,12 @@
-"""
-This module provides OAuth authentication using Google's OAuth2 API.
-"""
-
 import os
+import jwt
 import requests
 from flask import Blueprint, jsonify, redirect, url_for, request, session
 from flask_oauthlib.client import OAuth
 
 # Configuration for Google OAuth
 GOOGLE_CLIENT_ID = os.environ['GOOGLE_CLIENT_ID']
+JWT_SECRET_KEY = os.environ['JWT_SECRET_KEY']  # Secret key for JWT
 
 oauth_bp = Blueprint('oauth', __name__)
 
@@ -55,7 +53,17 @@ def authorized():
     session['email'] = user_info.data['email']
     session['name'] = user_info.data['name']
 
-    return redirect(url_for('page_homepage'))
+    # Generate a JWT token for the user
+    token_payload = {
+        "user_id": user_info.data['id'],
+        "email": user_info.data['email'],
+        "name": user_info.data['name']
+    }
+    token = jwt.encode(token_payload, "JWT_SECRET_KEY", algorithm="HS256")
+
+    # Redirect to frontend with the token
+    frontend_url = f"http://127.0.0.1:3000/page_homepage?token={token}"
+    return redirect(frontend_url)
 
 
 @oauth_bp.route('/verify-token', methods=['POST'])

@@ -1,14 +1,29 @@
 import React, {useEffect, useState} from 'react';
 import '../../style.css'
+import logo from '../../assets/logo.png';
+import Header from '../../components/header';
+import {getEmail} from "../../api";
 
 function HomePage() {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
 
   useEffect(() => {
     // Fetch the initial quote when the component mounts
     fetchRandomQuote();
+
+    // Fetch the user's email when the component mounts
+    const fetchEmail = async () => {
+      const email = await getEmail();
+      if (email) {
+        setUserEmail(email);
+      }
+    };
+
+    fetchEmail();
+
   }, []);
 
   const fetchRandomQuote = async () => {
@@ -51,7 +66,10 @@ function HomePage() {
 
   return (
     <div className={`div-body-encapsulate ${isDarkMode ? 'dark-mode' : ''}`}>
-      <img alt="Logo" src="../../assets/logo.png" className="logo_in_header"/>
+      <Header email={userEmail} activeMenu="page_homepage" />
+      <br/>
+      <img alt="Logo" src={logo} className="logo_in_header"/>
+      <br/><br/>
       <h3>Inspirational Quotes</h3>
 
       <div className="quote-block home-quote-block">
@@ -65,12 +83,14 @@ function HomePage() {
       </div>
       <p id="saveMessage" style={{color: 'green', fontWeight: 'bold', display: 'none'}}>Quote saved</p>
 
+      <br/><br/><br/><br/><br/>
       <div className="toggle-dark-mode-container">
         <button onClick={toggleDarkMode}>
           {isDarkMode ? '☀️ Day Mode' : '🌙 Night Mode'}
         </button>
       </div>
       <span className="span_example_javascripts">Note: Examples of Vanilla Javascript Usage</span>
+      <br/><br/><br/><br/><br/>
     </div>
   );
 }
