@@ -1,10 +1,15 @@
+"""
+This module provides a Flask application for user authentication and quote management.
+It allows users to log in, manage their quotes, and view quotes from other users.
+"""
+
 import csv
 import os
 import random
 import secrets
 
 from dotenv import load_dotenv
-from flask import render_template, redirect, url_for, Flask, request, jsonify, session
+from flask import redirect, url_for, Flask, request, jsonify, session
 from flask_oauthlib.client import OAuth
 from flask_cors import CORS
 from langchain.llms import OpenAI
@@ -26,23 +31,24 @@ key = secrets.token_hex(32)
 os.environ['JWT_SECRET_KEY'] = key
 print("Generated JWT_SECRET_KEY: ", key)
 
-from google_oauth import oauth_bp
+from backend.routes.google_oauth import oauth_bp
+from backend.routes.pages import pages_handlers_bp
 
+# Configuration for environment variables
 FILEPATH_DB_TABLE_ID_QUOTE_AUTHOR = os.environ['FILEPATH_DB_TABLE_ID_QUOTE_AUTHOR']
 GOOGLE_CLIENT_ID = os.environ['GOOGLE_CLIENT_ID']
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 CORS(app, supports_credentials=True)
-# CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 oauth = OAuth(app)
+
+# Google OAuth configuration
 google = oauth.remote_app(
     'google',
     consumer_key=GOOGLE_CLIENT_ID,
     consumer_secret=os.environ['YOUR_CLIENT_SECRET'],
-    request_token_params={
-        'scope': 'email profile'
-    },
+    request_token_params={'scope': 'email profile'},
     base_url='https://www.googleapis.com/oauth2/v1/',
     request_token_url=None,
     access_token_method='POST',
@@ -53,17 +59,20 @@ google = oauth.remote_app(
 
 @app.route('/')
 def index():
+    """Return a welcome message."""
     return jsonify({'message': 'Hello, from the Backend!'})
 
 
 @app.route('/login', methods=['POST'])
 def login():
+    """Authenticate the user and start a session."""
+    # Load user data
     users = load_user_data()
     data = request.json
     email = data.get('email')
     password = data.get('password')
-    print("users, email, password", users, email, password)
 
+    # Check if user exists and password matches
     if email in users and users[email] == password:
         session['email'] = email
         return jsonify(success=True, message="Login successful")
@@ -73,69 +82,19 @@ def login():
 
 @app.route('/logout')
 def logout():
+    """End the user's session and redirect to the logout screen."""
     session.pop('email', None)
-    return redirect(url_for('logout_screen'))
-
-
-@app.route('/logout_screen')
-def logout_screen():
-    return render_template('logout_screen.html')
+    return redirect(url_for('page_logout'))
 
 
 @app.route('/get_logged_in_email', methods=['GET'])
 def get_logged_in_email():
-    """Endpoint to retrieve the logged-in user's email."""
+    """Return the email of the currently logged-in user."""
     email = session.get('email')
     if email:
         return jsonify(email=email)
     else:
         return jsonify({"error": "User not logged in"}), 403
-
-
-@app.route('/page_homepage')
-def page_homepage():
-    if 'email' in session:
-        return "Hi from homepage"
-            # redirect(url_for('page_homepage'))
-            # render_template('page_home.html', email=session['email'],
-            #                    active_menu='page_homepage')
-    else:
-        return redirect(url_for('page_forbidden'))
-
-
-@app.route('/page_handcrafting')
-def page_create_quote():
-    if 'email' in session:
-        return render_template('page_handcrafting.html', email=session['email'],
-                               active_menu='page_create_quote')
-    else:
-        return redirect(url_for('page_forbidden'))
-
-
-@app.route('/page_gen_ai')
-def page_gen_ai():
-    if 'email' in session:
-        return render_template('page_gen_ai.html', email=session['email'],
-                               active_menu='page_gen_ai')
-    else:
-        return redirect(url_for('page_forbidden'))
-
-
-@app.route('/page_my_quotes')
-def page_my_quotes():
-    print(session)
-    if 'email' in session:
-        user_quotes = load_quotes_for_email(session['email'])
-        print("User quotes:", user_quotes)
-        return render_template('page_my_quotes.html', email=session['email'], quotes=user_quotes,
-                               active_menu='page_my_quotes')
-    else:
-        return redirect(url_for('page_forbidden'))
-
-
-@app.route('/page_forbidden')
-def page_forbidden():
-    return render_template('forbidden_screen.html')
 
 
 @app.route('/generate_quote', methods=['GET'])
@@ -277,6 +236,7 @@ def get_random_quote():
 
 # Register the blueprints
 app.register_blueprint(oauth_bp, url_prefix='/oauth')
+app.register_blueprint(pages_handlers_bp, url_prefix='/pages')
 
 
 if __name__ == '__main__':

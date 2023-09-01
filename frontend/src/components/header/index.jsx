@@ -19,8 +19,6 @@ function Header({ email, activeMenu }) {
       </div>
 
       <p className="header">
-        {console.log(email)}
-        {console.log({email})}
         <span className="span_user">{email}</span>
         <a href="/logout" className="a_logout">, Logout</a>
       </p>

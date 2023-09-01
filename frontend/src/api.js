@@ -21,7 +21,6 @@ loginUser = async (email, password) => {
 export const getEmail = async () => {
     try {
         const response = await axios.get(`${BASE_URL}/get_logged_in_email`, { withCredentials: true });
-        console.log("response.data:", response.data);
         return response.data.email;
     } catch (error) {
         console.error("Error fetching user's email:", error);

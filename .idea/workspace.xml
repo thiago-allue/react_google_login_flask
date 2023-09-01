@@ -4,51 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e7a19ef-4334-4302-beef-4d47441432fe" name="Changes" comment="Ignoring node_modules">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/react_google_login_flask.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/header/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/home/homepage_expected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/login_screen/login_expected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+    <list default="true" id="8e7a19ef-4334-4302-beef-4d47441432fe" name="Changes" comment="Login Screen, Header and Home functionals">
+      <change afterPath="$PROJECT_DIR$/backend/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/react_google_login_flask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react_google_oauth_jwt_flask.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/google_oauth.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/google_oauth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/google_oauth.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/google_oauth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/create.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/create.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/gen_ai.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/gen_ai.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/google_login.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/google_login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/notes.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/notes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/login_screen/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/login_screen/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,27 +57,30 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/thiago/Documents/Dropbox/0_gap_code/html_google_oauth_flask",
+    "last_opened_file_path": "/home/thiago/Documents/Dropbox_offline/react_google_oauth_jwt_flask/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/backend/routes" />
       <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/frontend/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="npm.start">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="react_google_login_flask" />
+      <module name="react_google_oauth_jwt_flask" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -136,7 +129,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693500132035</updated>
-      <workItem from="1693500135177" duration="23265000" />
+      <workItem from="1693500135177" duration="26429000" />
+      <workItem from="1693555293595" duration="59000" />
+      <workItem from="1693555422583" duration="4358000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring node_modules">
       <created>1693531733604</created>
@@ -145,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693531733604</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Login Screen, Header and Home functionals">
+      <created>1693531844607</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693531844607</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,9 +155,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ignoring node_modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ignoring node_modules" />
+    <MESSAGE value="Login Screen, Header and Home functionals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login Screen, Header and Home functionals" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/react_google_login_flask$main.coverage" NAME="main Coverage Results" MODIFIED="1693531160370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/react_google_oauth_jwt_flask$main.coverage" NAME="main Coverage Results" MODIFIED="1693558778269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
   </component>
 </project>
